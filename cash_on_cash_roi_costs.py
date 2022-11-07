@@ -68,3 +68,4 @@ class CashOnCashROI():
                 self.misc_other_costs = float(input("What are the estimated total miscellaneous/other costs for this property? "))
             finally:
                 continue
+            

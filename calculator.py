@@ -92,3 +92,4 @@ class Calculator(Income, Expenses, CashOnCashROI):
             return False
         else:
             return True
+            
