@@ -99,7 +99,6 @@ class Expenses:
         total_expenses = 0.0
         if len(self.expenses) > 0:
             for v in self.expenses.values():
-                print(v)
                 total_expenses += v
         self.total_expenses = total_expenses
     
