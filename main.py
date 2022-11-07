@@ -100,8 +100,7 @@ class Main:
                     new_calculator.display_cash_on_cash_roi()
                 Main.displayMainMenu()
             if menu_option == '11':
-                new_calculator.calculate_cash_on_cash_roi()
-                if new_calculator.check_cash_on_cash_roi:
+                if new_calculator.check_cash_on_cash_roi():
                     new_calculator.calculate_cash_on_cash_roi()
                     new_calculator.display_cash_on_cash_roi()
                 Main.displayMainMenu()

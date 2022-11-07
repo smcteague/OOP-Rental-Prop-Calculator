@@ -57,14 +57,14 @@ class CashOnCashROI():
         while not isinstance(self.misc_other_costs, float):
             try:
                 if self.misc_other_costs == None:
-                    self.misc_other_costs = input("\nWhat are the estimated total miscellaneous other costs for this property? ")
+                    self.misc_other_costs = input("\nWhat are the estimated total miscellaneous/other costs for this property? ")
                     self.misc_other_costs = float(self.misc_other_costs)
                     break
                 else:
                     print("\nPlease enter a number only.")
-                    self.misc_other_costs = float(input("What are the estimated total miscellaneous other costs for this property? "))
+                    self.misc_other_costs = float(input("What are the estimated total miscellaneous/other costs for this property? "))
             except:
                 print("\nPlease enter a number only.")
-                self.misc_other_costs = float(input("What are the estimated total miscellaneous other costs for this property? "))
+                self.misc_other_costs = float(input("What are the estimated total miscellaneous/other costs for this property? "))
             finally:
                 continue

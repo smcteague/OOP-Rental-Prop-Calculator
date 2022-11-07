@@ -55,9 +55,9 @@ class Calculator(Income, Expenses, CashOnCashROI):
             
             self.annual_cash_flow = self.cash_flow * 12
             
-            self.cash_on_cash_roi = (self.annual_cash_flow / self.total_investment) * 100
+            self.cash_on_cash_roi = float(self.annual_cash_flow / self.total_investment)
         else:
-            print("\nPlease enter estimated monthly income and expenses and cash-on-cash ROI costs before choosing this option.")
+            return
 
     def display_cash_on_cash_roi(self):
         if self.cash_on_cash_roi == None:
@@ -67,18 +67,28 @@ class Calculator(Income, Expenses, CashOnCashROI):
             print("="*60)
             print("Estimated Cash-On-Cash ROI:")
             print("="*60)
+            down_payment_currency_string = "${:,.2f}".format(self.down_payment)
+            print(f"Down Payment: {down_payment_currency_string}")
+            closing_costs_currency_string = "${:,.2f}".format(self.closing_costs)
+            print(f"Closing Costs: {closing_costs_currency_string}")
+            rehab_budget_currency_string = "${:,.2f}".format(self.rehab_budget)
+            print(f"Rehab Budget: {rehab_budget_currency_string}")
+            misc_other_costs_currency_string = "${:,.2f}".format(self.misc_other_costs)
+            print(f"Miscellaneous/Other Costs: {misc_other_costs_currency_string}")
+            print("-"*60)
             total_investment_currency_string = "${:,.2f}".format(self.total_investment)
             print(f"Total Investment: {total_investment_currency_string}")
             annual_cash_flow_currency_string = "${:,.2f}".format(self.annual_cash_flow)
             print(f"Annual Cash Flow: {annual_cash_flow_currency_string}")
             print("-"*60)
-            cash_on_cash_roi_currency_string = "${:. 0%}".format(self.cash_on_cash_roi)
-            print(f"Total Cash Flow: {cash_on_cash_roi_currency_string}")
+            cash_on_cash_roi_currency_string = "{:.2%}".format(self.cash_on_cash_roi)
+            print(f"Cash-On-Cash ROI: {cash_on_cash_roi_currency_string}")
             print("="*60)
             print("\n")
 
     def check_cash_on_cash_roi(self):
         if self.cash_on_cash_roi == None:
+            print("\nPlease enter estimated monthly income and expenses and cash-on-cash ROI costs before choosing this option.")
             return False
         else:
             return True
